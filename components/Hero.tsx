@@ -60,7 +60,7 @@ const Hero = () => {
           </h2>
 
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl font-Montserrat'>
-            Hi, I'm Josh, a Next.js Developer Based in Canada
+            Hi, I&apos;m Josh, a Next.js Developer Based in Canada
           </p>
             <MagicButton title='View My Work!' link='#about' position='right' icon={<FaLocationArrow/>} otherClasses='gap-3'/>
 
