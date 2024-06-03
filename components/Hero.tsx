@@ -6,6 +6,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import { TextGenerateEffect } from './ui/text-generate-effect';
 import { Meteors } from './ui/meteors';
 import MagicButton from './ui/MagicButton';
+
 const Hero = () => {
   return (
     <div className="pb-20 pt-36 h-screen">
