@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaAddressBook, FaFileContract, FaHome, FaMailBulk, FaProjectDiagram } from "react-icons/fa";
 import Grid from "@/components/Grid";
 import { ContactShadows } from "@react-three/drei";
+import Projects from "@/components/Projects";
 export default function Home() {
   const Navitems = [
     {
@@ -34,6 +35,7 @@ export default function Home() {
         <FloatingNav navItems={Navitems} className=""/>
        <Hero/>
        <Grid/>
+       <Projects/>
       </div>
     </main>
   );
