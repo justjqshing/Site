@@ -42,7 +42,7 @@ const cursor = word.cursor.className;
   
     const sequence = async () => {
       if (isInView) { // Only animate if in view
-        await animation.start({ width: "100%", transition: { duration: 0.6, ease: "linear", delay: 1} });
+        await animation.start({ width: "fit-content", transition: { duration: 0.6, ease: "linear", delay: 1} });
         setTimeout(() => {
           setPreWord(currentWordIndex + 1)
         }, 1500)
@@ -70,17 +70,19 @@ const cursor = word.cursor.className;
   );
 
   return (
-    <div className={cn("flex h-[20vh] items-center", className)}>
+    <div className={cn("flex items-center", className)}>
       <motion.div
         className="overflow-hidden"
         animate={animation}
         initial={{ width: "0%" }}
         ref={ref} 
+        style={{ overflowX: "hidden" }}
       >
         <div
           className="text-xs flex justify-start sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
           style={{ whiteSpace: "nowrap" }}
         >
+          
           {renderWords()} 
         </div>
       </motion.div>

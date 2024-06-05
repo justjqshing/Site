@@ -98,17 +98,30 @@ const Hero = () => {
             
             Dynamic Web Magic with Next.js
           </p>
-          <div className='w-full flex justify-center sm:justify-start  mb-10'>
+          <div className='w-full flex text-center justify-center items-center sm:justify-center '>
 
-          <h2 className="flex flex-col sm:flex-row flex-wrap w-full items-center justify-center text-center sm:text-start font-Montserrat text-[40px] md:text-5xl lg:text-6xl">
-            Making <div className='block'><TypewriterEffectSmooth words={words} className='dark:text-purple'/>
-            </div><span className=' hidden sm:inline-block min-w-[14vw] justify-start'><span className="hidden sm:inline-block h-80 ml-4"><TypewriterEffectSmooth words={words} className='dark:text-purple'/></span></span>into Reality, One Project at a time
-          </h2>
+            <div style={{ width: '100%' }} className='hidden sm:flex justify-center text-center items-center flex-row gap-3 '>
+              <h1 className='text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl'>
+              Making 
+              </h1>
+
+
+              <TypewriterEffectSmooth words={words} className='text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple'/>
+           </div>
+          
+
+          
+
+        
+          <TextGenerateEffect
+            words="Transforming Concepts into Seamless User Experiences"
+            className="text-center md:hidden text-[40px] md:text-5xl lg:text-6xl"
+          />
                       
           </div>
 
 
-          <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl font-Montserrat'>
+          <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl font-Montserrat mt-7'>
             Hi, I&apos;m Josh, a Next.js Developer Based in Canada
           </p>
             <MagicButton title='View My Work!' link='#about' position='right' icon={<FaLocationArrow/>} otherClasses='gap-3'/>
