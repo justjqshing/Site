@@ -33,25 +33,26 @@ const cursor = word.cursor.className;
     setMorphCursor(false)
     setTimeout(() => {
       setMorphCursor(true)
-    }, 900)
+    }, 300)
     
   }, [preWord])
 
   useEffect(() => {
     const word = words[currentWordIndex];
-
+  
     const sequence = async () => {
       if (isInView) { // Only animate if in view
-        await animation.start({ width: "fit-content", transition: { duration: 0.6, ease: "linear", delay: 1} });
+        await animation.start({ width: "100%", transition: { duration: 0.6, ease: "linear", delay: 1} });
         setTimeout(() => {
           setPreWord(currentWordIndex + 1)
         }, 1500)
         await animation.start({ width: "0%", transition: { duration: 0.6, ease: "linear", delay: 1 }});
+  
+        // Only update currentWordIndex if isInView is true
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
-
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     };
-
+  
     sequence();
   }, [animation, currentWordIndex, words, isInView]); // Add isInView dependency
 
@@ -60,7 +61,7 @@ const cursor = word.cursor.className;
       {words[currentWordIndex].text.split("").map((char, index) => (
         <span
           key={`char-${index}`}
-          className={cn(`dark:text-white text-black `, words[currentWordIndex].className)}
+          className={cn(` text-black `, words[currentWordIndex].className)}
         >
           {char}
         </span>
@@ -69,7 +70,7 @@ const cursor = word.cursor.className;
   );
 
   return (
-    <div className={cn("flex space-x-1 my-6", className)}>
+    <div className={cn("flex h-[20vh] items-center", className)}>
       <motion.div
         className="overflow-hidden"
         animate={animation}
@@ -77,7 +78,7 @@ const cursor = word.cursor.className;
         ref={ref} 
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className="text-xs flex justify-start sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
           style={{ whiteSpace: "nowrap" }}
         >
           {renderWords()} 
@@ -91,7 +92,7 @@ const cursor = word.cursor.className;
           repeat: Infinity,
         }}
         className={cn(
-          `block rounded-sm w-[4px] h-4 sm:h-6 xl:h-12 ${morphCursor ? cursor :  'bg-transparent'} `,
+          `block rounded-sm w-[4px] h-4 sm:h-6 xl:h-14 ${morphCursor ? cursor :  'bg-transparent'} `,
 
         )}
       ></motion.span>

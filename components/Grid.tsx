@@ -1,6 +1,7 @@
 
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { gridItems } from "@/data";
+import { HeroHighlight } from "./ui/Highlight";
 const Grid = () => {
   // const gridItems = [
   //   {
@@ -66,7 +67,8 @@ const Grid = () => {
   //   },
   // ];
   return (
-    <section id="about">
+    
+    <section id="about" className="h-full">
       <BentoGrid className="w-full py-20">
         {gridItems.map((item, i) => {
           console.log(item.className)
@@ -86,6 +88,7 @@ const Grid = () => {
         })}
       </BentoGrid>
     </section>
+    
   );
 };
 

@@ -5,9 +5,51 @@ import { motion } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa";
 import { TextGenerateEffect } from './ui/text-generate-effect';
 import { Meteors } from './ui/meteors';
+import { TypewriterEffectSmooth } from './ui/typeWritter';
 import MagicButton from './ui/MagicButton';
 
 const Hero = () => {
+  const words = [
+    {
+        text: "Dreams",
+        className: "'text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple",
+        cursor: {
+            className: "bg-purple"
+        }
+    },
+    {
+        text: "Visions",
+        className: "'text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple",
+        cursor: {
+            className: "bg-purple"
+        }
+    },
+    {
+        text: "Ideas",
+        className: "'text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple",
+        cursor: {
+            className: "bg-purple"
+        }
+        
+    },
+    {
+      text: "Goals",
+      className: "'text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple",
+      cursor: {
+          className: "bg-purple"
+      }
+      
+  },
+  {
+    text: "Hopes",
+    className: "'text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl text-purple",
+    cursor: {
+        className: "bg-purple"
+    }
+    
+}
+
+]
   return (
     <div className="pb-20 pt-36 h-screen">
         <div>
@@ -56,9 +98,15 @@ const Hero = () => {
             
             Dynamic Web Magic with Next.js
           </p>
-          <h2>
-            <TextGenerateEffect words="Transforming Concepts into Seamless Experiences" className='text-center font-Montserrat text-[40px] md:text-5xl lg:text-6xl'/>
+          <div className='w-full flex justify-center sm:justify-start  mb-10'>
+
+          <h2 className="flex flex-col sm:flex-row flex-wrap w-full items-center justify-center text-center sm:text-start font-Montserrat text-[40px] md:text-5xl lg:text-6xl">
+            Making <div className='block'><TypewriterEffectSmooth words={words} className='dark:text-purple'/>
+            </div><span className=' hidden sm:inline-block min-w-[14vw] justify-start'><span className="hidden sm:inline-block h-80 ml-4"><TypewriterEffectSmooth words={words} className='dark:text-purple'/></span></span>into Reality, One Project at a time
           </h2>
+                      
+          </div>
+
 
           <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl font-Montserrat'>
             Hi, I&apos;m Josh, a Next.js Developer Based in Canada

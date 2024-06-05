@@ -5,12 +5,14 @@ import { FaAddressBook, FaFileContract, FaHome, FaMailBulk, FaProjectDiagram } f
 import Grid from "@/components/Grid";
 import { ContactShadows } from "@react-three/drei";
 import Projects from "@/components/Projects";
+import { HeroHighlight } from "@/components/ui/Highlight";
+import { PiHouseThin } from "react-icons/pi";
 export default function Home() {
   const Navitems = [
     {
       name: "Home",
       link: "#",
-      icon: <FaHome/>
+      icon: <PiHouseThin/>
     },
     {
       name: "About",
@@ -30,11 +32,19 @@ export default function Home() {
   ];
   
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
+    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto ">
+      <div className="max-w-7xl w-full sm:px-10 px-5">
         <FloatingNav navItems={Navitems} className=""/>
        <Hero/>
-       <Grid/>
+       </div>
+       <HeroHighlight containerClassName="dark:bg-black-100">
+          <div className="w-screen h-full max-w-7xl sm:px-10 px-5 ">
+            <Grid/>
+
+          </div>
+        </HeroHighlight>
+       
+       <div className="max-w-7xl w-full sm:px-10 px-5">
        <Projects/>
       </div>
     </main>

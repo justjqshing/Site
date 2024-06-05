@@ -86,7 +86,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     shininess: 0.9,
     arcTime: 2000,
     arcLength: 4,
-    rings: 5,
+    rings: 3,
     maxRings: 10,
     ...globeConfig,
   };
